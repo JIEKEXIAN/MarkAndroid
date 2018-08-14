@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:press="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image_view1"
+        android:layout_width="match_parent"
+        android:layout_height="210.5dp"
+        android:layout_below="@+id/toolbar"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/image_view2"
+        android:layout_width="match_parent"
+        android:layout_height="210.5dp"
+        android:layout_below="@+id/toolbar"
+        android:scaleType="centerCrop"/>
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:elevation="0dp">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="210.5dp"
+                android:minHeight="70dp"
+                app:contentScrim="#80ffffff"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <com.wtuadn.pressable.PressableTextView
+                    android:id="@+id/play_movie"
+                    android:layout_width="63dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/trailer_play_button_bg"
+                    android:clickable="true"
+                    android:drawableLeft="@drawable/white_play_icon"
+                    android:drawablePadding="6dp"
+                    android:gravity="center_vertical"
+                    android:onClick="onClick"
+                    android:paddingLeft="10dp"
+                    android:text="预告"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:visibility="gone"
+                    press:pressed_color="@color/black_pressed_color"/>
+
+                <com.intlime.mark.view.widget.BigPlayButton
+                    android:id="@+id/movie_source_play"
+                    android:layout_width="42.5dp"
+                    android:layout_height="104.5dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:clickable="true"
+                    android:gravity="center|right"
+                    android:onClick="onClick"
+                    android:paddingRight="3dp"
+                    android:text="播放"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="59.5dp"
+                android:background="@drawable/detail_button_layout_bg">
+
+                <RelativeLayout
+                    android:layout_width="126dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/detail_button_bg_toadd">
+
+                    <ImageView
+                        android:id="@+id/added_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="18dp"
+                        android:src="@drawable/detail_added_icon"/>
+
+                    <com.wtuadn.pressable.PressableImageView
+                        android:id="@+id/button2"
+                        android:layout_width="44dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        android:scaleType="center"
+                        android:src="@drawable/detail_button2_icon_toadd"
+                        press:pressed_color="@color/black_pressed_color"/>
+
+                    <View
+                        android:id="@+id/button_layout_line"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_toLeftOf="@+id/button2"
+                        android:background="#818c91"/>
+
+                    <com.wtuadn.pressable.PressableTextView
+                        android:id="@+id/button1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toLeftOf="@+id/button_layout_line"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:onClick="onClick"
+                        android:text="想看"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        press:pressed_color="@color/black_pressed_color"/>
+
+                </RelativeLayout>
+            </FrameLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:text="评价这部电影"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="14sp"/>
+
+                <com.intlime.mark.view.widget.RatingBar
+                    android:id="@+id/rating_bar"
+                    android:layout_width="155dp"
+                    android:layout_height="21.5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="17dp"/>
+
+                <LinearLayout
+                    android:id="@+id/watch_time_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="观影时间："
+                        android:textColor="@color/dark_blue"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/watch_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="15sp"/>
+
+                    <com.wtuadn.pressable.PressableImageView
+                        android:id="@+id/edit_watch_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/watch_time_layout"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        android:src="@drawable/watch_time_edit_icon"
+                        press:mask_radius="300dp"
+                        press:pressed_color="@color/black_pressed_color"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="9.5dp"
+                    android:layout_marginRight="9.5dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/movie_detail_overview_bg"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="概览"
+                    android:textColor="@color/a_main_text_color"
+                    android:textSize="15sp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="17.5dp"
+                    android:paddingRight="17.5dp">
+
+                    <com.intlime.mark.view.widget.RatingView
+                        android:id="@+id/rating_view"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="13dp"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/rating_view"
+                        android:layout_alignRight="@+id/rating_view"
+                        android:layout_below="@+id/rating_view"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="豆瓣"
+                        android:textColor="@color/a_main_text_color"
+                        android:textSize="13sp"/>
+
+                    <TextView
+                        android:id="@+id/pubdate_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="23dp"
+                        android:text="上映"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/pubdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="22dp"
+                        android:layout_marginTop="23dp"
+                        android:layout_toLeftOf="@+id/rating_view"
+                        android:layout_toRightOf="@+id/pubdate_hint"
+                        android:lineSpacingMultiplier="@dimen/line_space"
+                        android:textColor="@color/a_main_text_color"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/duration_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pubdate"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16.3dp"
+                        android:text="片长"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pubdate"
+                        android:layout_marginRight="22dp"
+                        android:layout_marginTop="16.3dp"
+                        android:layout_toLeftOf="@+id/rating_view"
+                        android:layout_toRightOf="@+id/duration_hint"
+                        android:textColor="@color/a_main_text_color"
+                        android:textSize="14sp"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:text="类型"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/movie_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingMultiplier="@dimen/line_space"
+                        android:textColor="@color/a_main_text_color"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:lineSpacingMultiplier="@dimen/line_space"
+                        android:text="导演"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/directors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/a_main_text_color"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:text="编剧"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/writers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingMultiplier="@dimen/line_space"
+                        android:textColor="@color/a_main_text_color"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:text="主演"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/casts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingMultiplier="@dimen/line_space"
+                        android:textColor="@color/a_main_text_color"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="26dp"
+                    android:lineSpacingMultiplier="@dimen/line_space"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/a_main_text_color"
+                    android:textSize="15sp"/>
+
+                <LinearLayout
+                    android:id="@+id/url_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="43.5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"/>
+
+                <LinearLayout
+                    android:id="@+id/movielists_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="9.5dp"
+                        android:layout_marginRight="9.5dp"
+                        android:background="@drawable/movie_detail_overview_bg"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="相关影单"
+                        android:textColor="@color/a_main_text_color"
+                        android:textSize="15sp"/>
+
+                    <com.intlime.mark.view.recyclerview.YRecyclerView
+                        android:id="@+id/movielists_recycler"
+                        android:layout_marginTop="33dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginLeft="7.2dp"
+                        android:layout_marginRight="7.2dp"
+                        android:minHeight="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/record_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="9.5dp"
+                        android:layout_marginRight="9.5dp"
+                        android:background="@drawable/movie_detail_overview_bg"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="记录"
+                        android:textColor="@color/a_main_text_color"
+                        android:textSize="15sp"/>
+
+                    <com.wtuadn.pressable.PressableTextView
+                        android:id="@+id/note"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="25dp"
+                        android:background="@drawable/bg_round_white"
+                        android:clickable="true"
+                        android:ellipsize="end"
+                        android:lineSpacingMultiplier="@dimen/line_space"
+                        android:maxLines="6"
+                        android:minHeight="94.5dp"
+                        android:onClick="onClick"
+                        android:paddingBottom="13dp"
+                        android:paddingLeft="19dp"
+                        android:paddingRight="19dp"
+                        android:paddingTop="13dp"
+                        android:textSize="14sp"
+                        press:pressed_color="@color/black_pressed_color"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:press="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@drawable/toolbar_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="49dp"
+            android:layout_toLeftOf="@+id/done"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="记录"
+                android:textColor="@color/main_text_color"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#818c91"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+        <com.wtuadn.pressable.PressableTextView
+            android:id="@+id/done"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:paddingRight="14dp"
+            android:text="完成"
+            android:textColor="@color/main_text_color"
+            android:textSize="18sp"
+            press:borderless="true"
+            press:pressed_color="@color/black_pressed_color"/>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg"
+        android:gravity="top"
+        android:lineSpacingMultiplier="@dimen/line_space"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="7dp"
+        android:textColor="#262626"
+        android:textCursorDrawable="@drawable/edittext_cursor"
+        android:textSize="17sp"/>
+
+</LinearLayout>

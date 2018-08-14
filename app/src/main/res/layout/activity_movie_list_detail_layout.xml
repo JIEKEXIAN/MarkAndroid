@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:press="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <com.tencent.smtt.sdk.WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_layout"
+        android:layout_below="@id/toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/main_tab_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.wtuadn.pressable.PressableTextView
+            android:id="@+id/likes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:drawableTop="@drawable/movie_list_detail_like_unchecked"
+            android:gravity="center_horizontal"
+            android:onClick="onClick"
+            android:paddingTop="10dp"
+            android:textColor="#818c91"
+            android:textSize="10sp"
+            press:pressed_color="@color/black_pressed_color"/>
+
+        <com.wtuadn.pressable.PressableTextView
+            android:id="@+id/comments"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:drawableTop="@drawable/movie_list_comment_icon"
+            android:gravity="center_horizontal"
+            android:onClick="onClick"
+            android:paddingTop="10dp"
+            android:textColor="#818c91"
+            android:textSize="10sp"
+            press:pressed_color="@color/black_pressed_color"/>
+
+        <com.wtuadn.pressable.PressableTextView
+            android:id="@+id/shares"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:drawableTop="@drawable/movie_list_detail_share"
+            android:gravity="center_horizontal"
+            android:onClick="onClick"
+            android:paddingTop="10dp"
+            android:textColor="#818c91"
+            android:textSize="10sp"
+            press:pressed_color="@color/black_pressed_color"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Mark</string>
+    <string name="no_network">当前网络不可用，请检查你的网络设置</string>
+    <string name="net_error">服务器开小差了，请稍后再试</string>
+    <string name="net_time_out">网络不太好，再试一次吧</string>
+    <string name="forget_pass"><u>重设密码</u></string>
+    <string name="account_login"><u>已有账号？在此登录</u></string>
+</resources>

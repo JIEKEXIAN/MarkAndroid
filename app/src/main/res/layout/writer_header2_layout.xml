@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:paddingTop="17dp"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:id="@+id/article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="文章"
+        android:textColor="@color/a_main_text_color"
+        android:textSize="16sp"/>
+
+    <View
+        android:layout_width="31dp"
+        android:layout_height="1dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="13.6dp"
+        android:layout_toLeftOf="@+id/article"
+        android:background="@color/a_main_text_color"/>
+
+    <View
+        android:layout_width="31dp"
+        android:layout_height="1dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="13.6dp"
+        android:layout_toRightOf="@+id/article"
+        android:background="@color/a_main_text_color"/>
+</RelativeLayout>

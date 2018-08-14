@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion compileSdkExt
+    buildToolsVersion buildToolsExt
+
+    compileOptions {
+        sourceCompatibility jdkVersion
+        targetCompatibility jdkVersion
+    }
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion targetSdkExt
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.anko:anko-sdk15:$anko_version"
+}
+

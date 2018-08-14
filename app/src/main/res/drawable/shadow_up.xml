@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- shadow layer 1 -->
+    <item
+        android:top="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#03000000"/>
+        </shape>
+    </item>
+    <!-- shadow layer 2 -->
+    <item
+        android:top="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#03000000"/>
+        </shape>
+    </item>
+    <!-- shadow layer 3 -->
+    <item
+        android:top="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#03000000"/>
+        </shape>
+    </item>
+    <!-- shadow layer 4 -->
+    <item
+        android:top="4dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#03000000"/>
+        </shape>
+    </item>
+    <!-- shadow layer 5 -->
+    <item
+        android:top="5dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#03000000"/>
+        </shape>
+    </item>
+</layer-list>

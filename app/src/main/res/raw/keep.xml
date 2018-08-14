@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+           tools:shrinkMode="strict"
+           tools:keep="@layout/getui_notification, @layout/notification_inc, @layout/increment_popup_dialog, @layout/umeng_update_dialog"/>

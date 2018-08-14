@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:press="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_vertical"
+        android:text="设置密码后，可使用手机号＋密码登录"
+        android:textColor="@color/a_main_text_color"
+        android:textSize="13sp"/>
+
+    <com.intlime.mark.view.widget.ClearEditText
+        android:id="@+id/passwd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_edit_stroke_white"
+        android:drawableLeft="@drawable/pass_edit_icon"
+        android:drawablePadding="8.5dp"
+        android:gravity="center_vertical"
+        android:hint="设置登录密码，不少于6位"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/main_text_color"
+        android:textColorHint="@color/edit_hint_color"
+        android:textCursorDrawable="@drawable/edittext_cursor"
+        android:textSize="14sp"/>
+
+    <com.wtuadn.pressable.PressableTextView
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_button_stroke_white"
+        android:gravity="center"
+        android:text="完成"
+        android:textColor="@color/a_main_text_color"
+        android:textSize="14sp"
+        press:pressed_color="@color/black_pressed_color"/>
+</LinearLayout>

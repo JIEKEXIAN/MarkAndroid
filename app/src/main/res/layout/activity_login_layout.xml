@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:press="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#44000000">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <ImageView
+            android:id="@+id/scrolling_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"/>
+
+    </ScrollView>
+
+    <com.wtuadn.pressable.PressableImageView
+        android:id="@+id/close"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:scaleType="center"
+        android:src="@drawable/cancel_login_icon"
+        press:pressed_color="@color/black_pressed_color"
+        press:pressed_color_alpha="0.5"/>
+
+    <ImageView
+        android:id="@+id/splash_logo"
+        android:layout_width="46dp"
+        android:layout_height="40.8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/app_logo_white"/>
+
+    <com.wtuadn.pressable.PressableTextView
+        android:id="@+id/weibo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/register"
+        android:layout_marginBottom="29dp"
+        android:layout_marginRight="55dp"
+        android:layout_toLeftOf="@+id/weixin"
+        android:clickable="true"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/login_weibo_bg"
+        android:gravity="center_horizontal"
+        android:onClick="onClick"
+        android:text="微博登录"
+        android:textColor="#bfffffff"
+        android:textSize="14sp"
+        press:pressed_color="@color/black_pressed_color"/>
+
+    <com.wtuadn.pressable.PressableTextView
+        android:id="@+id/weixin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/register"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
+        android:clickable="true"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/login_weixin_bg"
+        android:gravity="center_horizontal"
+        android:onClick="onClick"
+        android:text="微信登录"
+        android:textColor="#bfffffff"
+        android:textSize="14sp"
+        press:pressed_color="@color/black_pressed_color"/>
+
+    <com.wtuadn.pressable.PressableTextView
+        android:id="@+id/qq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/register"
+        android:layout_marginBottom="29dp"
+        android:layout_marginLeft="55dp"
+        android:layout_toRightOf="@+id/weixin"
+        android:clickable="true"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/login_qq_bg"
+        android:gravity="center_horizontal"
+        android:onClick="onClick"
+        android:text="QQ登录"
+        android:textColor="#bfffffff"
+        android:textSize="14sp"
+        press:pressed_color="@color/black_pressed_color"/>
+
+    <com.wtuadn.pressable.PressableTextView
+        android:id="@+id/register"
+        android:layout_width="288dp"
+        android:layout_height="45dp"
+        android:layout_above="@+id/account_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="63dp"
+        android:background="@drawable/login_register_bg"
+        android:clickable="true"
+        android:drawablePadding="16dp"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:text="手机注册"
+        android:textColor="#bfffffff"
+        android:textSize="14sp"
+        press:pressed_color="@color/black_pressed_color"/>
+
+    <TextView
+        android:id="@+id/account_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:padding="5dp"
+        android:text="@string/account_login"
+        android:textColor="@color/selector_account_login_text"
+        android:textSize="14sp"/>
+</RelativeLayout>

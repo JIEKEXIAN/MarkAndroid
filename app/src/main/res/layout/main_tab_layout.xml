@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.intlime.mark.view.widget.NestRadioGroup
+    android:id="@+id/main_tab_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="49dp"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/main_tab_bg"
+    android:orientation="horizontal">
+
+    <RadioButton
+        android:id="@+id/discover"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1px"
+        android:layout_weight="1"
+        android:button="@null"
+        android:checked="true"
+        android:drawableTop="@drawable/selector_tab_discover_radio"
+        android:gravity="center_horizontal|bottom"
+        android:paddingBottom="5.2dp"
+        android:paddingTop="6dp"
+        android:text="发现"
+        android:textColor="@color/selector_main_tab_color"
+        android:textSize="11sp"/>
+
+    <RadioButton
+        android:id="@+id/movies"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1px"
+        android:layout_weight="1"
+        android:button="@null"
+        android:drawableTop="@drawable/selector_tab_movies_radio"
+        android:gravity="center_horizontal|bottom"
+        android:paddingBottom="5.2dp"
+        android:paddingTop="5dp"
+        android:text="我的电影"
+        android:textColor="@color/selector_main_tab_color"
+        android:textSize="11sp"/>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <RadioButton
+            android:id="@+id/user_center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1px"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_tab_usercenter_radio"
+            android:gravity="center_horizontal|bottom"
+            android:paddingBottom="5.2dp"
+            android:paddingTop="7dp"
+            android:text="账号"
+            android:textColor="@color/selector_main_tab_color"
+            android:textSize="11sp"/>
+
+        <View
+            android:id="@+id/anchor"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/news_count"
+            android:layout_width="wrap_content"
+            android:layout_height="17.5dp"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@+id/anchor"
+            android:background="@drawable/red_circle"
+            android:gravity="center"
+            android:minWidth="17.5dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</com.intlime.mark.view.widget.NestRadioGroup>

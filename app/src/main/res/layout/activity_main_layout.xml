@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:press="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@drawable/toolbar_bg">
+
+        <CheckBox
+            android:id="@+id/mode_checkbox"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_movie_mode"
+            android:button="@null"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/main_text_color"
+            android:textSize="18sp"/>
+
+        <com.wtuadn.pressable.PressableImageView
+            android:id="@+id/search"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:scaleType="center"
+            android:src="@drawable/movie_search_icon"
+            press:borderless="true"
+            press:pressed_color="@color/black_pressed_color"/>
+
+        <com.wtuadn.pressable.PressableTextView
+            android:id="@+id/movie_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:drawablePadding="6dp"
+            android:drawableRight="@drawable/movie_sort_icon"
+            android:gravity="center_vertical"
+            android:paddingRight="15dp"
+            android:scaleType="center"
+            android:text="排序"
+            android:textColor="@color/main_text_color"
+            android:textSize="17sp"
+            android:visibility="gone"
+            press:borderless="true"
+            press:pressed_color="@color/black_pressed_color"/>
+
+        <com.wtuadn.pressable.PressableImageView
+            android:id="@+id/setting"
+            android:layout_width="49dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:scaleType="center"
+            android:src="@drawable/setting_icon"
+            android:visibility="gone"
+            press:borderless="true"
+            press:pressed_color="@color/black_pressed_color"/>
+    </RelativeLayout>
+
+    <include
+        layout="@layout/main_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

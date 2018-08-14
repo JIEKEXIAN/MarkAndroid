@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:press="http://schemas.android.com/apk/res-auto"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="搜索"
+            android:textColor="#304851"
+            android:textSize="18sp"/>
+
+        <com.wtuadn.pressable.PressableImageView
+            android:id="@+id/close"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:scaleType="center"
+            android:src="@drawable/close_icon"
+            press:borderless="true"
+            press:pressed_color="@color/black_pressed_color"/>
+    </RelativeLayout>
+
+    <com.intlime.mark.view.widget.ClearEditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_below="@id/titleBar"
+        android:background="@drawable/movie_search_edit_bg"
+        android:gravity="center_vertical"
+        android:hint="输入电影名/导演/演员/编剧"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:singleLine="true"
+        android:textColor="@color/main_text_color"
+        android:textColorHint="#818c91"
+        android:textCursorDrawable="@drawable/edittext_cursor"
+        android:textSize="15sp"/>
+
+    <com.intlime.mark.view.recyclerview.LoadRecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/edit_text"/>
+
+    <FrameLayout
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/edit_text">
+
+        <LinearLayout
+            android:id="@+id/hint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/search_empty_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="14.4dp"
+                android:gravity="center"
+                android:text="没有找到"
+                android:textColor="@color/a_main_text_color"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="31dp"
+                android:background="@drawable/movie_search_hint_text_bg"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="输入电影名/导演/演员/编剧搜索"
+                android:textColor="#304750"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="126.5dp"/>
+
+        <RelativeLayout
+            android:id="@+id/movie_word_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/word"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47.5dp"
+                android:layout_marginRight="47.5dp"
+                android:layout_marginTop="59dp"
+                android:lineSpacingMultiplier="@dimen/line_space"
+                android:textColor="@color/a_main_text_color"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/word"
+                android:layout_marginLeft="47.5dp"
+                android:layout_marginRight="47.5dp"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/a_main_text_color"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="47.5dp"
+                android:layout_marginTop="39dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/movie_search_word_icon"/>
+        </RelativeLayout>
+    </FrameLayout>
+
+</merge>

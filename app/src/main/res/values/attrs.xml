@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="switchButton">
+        <attr name="btn_width" format="dimension"/>
+        <attr name="btn_height" format="dimension"/>
+        <attr name="btn_radius" format="dimension"/>
+        <attr name="btn_stroke" format="dimension"/>
+        <attr name="btn_bgColor_unSelected" format="reference|color"/>
+        <attr name="btn_bgColor_selected" format="reference|color"/>
+        <attr name="btn_slider_unSelected" format="reference|color"/>
+        <attr name="btn_slider_selected" format="reference|color"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:press="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="161dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="2.5dp"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_alignBottom="@id/image_view"
+        android:background="@drawable/discover_item_img_fg"
+        android:ellipsize="end"
+        android:gravity="bottom"
+        android:lines="1"
+        android:paddingBottom="8.2dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+
+    <com.wtuadn.pressable.PressableTextView
+        android:id="@+id/likes"
+        android:layout_width="37dp"
+        android:layout_height="43dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="19.5dp"
+        android:layout_marginTop="2.5dp"
+        android:background="@drawable/discover_like_bg"
+        android:gravity="center"
+        android:paddingTop="6.5dp"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        press:pressed_color="@color/black_pressed_color"/>
+
+    <View
+        android:id="@+id/tag"
+        android:layout_width="50.3dp"
+        android:layout_height="49.7dp"
+        android:layout_marginLeft="4dp"
+        android:background="@drawable/discover_new_icon"/>
+</RelativeLayout>

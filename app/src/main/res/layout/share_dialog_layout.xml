@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:press="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/shadow_up"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f7efefef"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:gravity="center"
+            android:text="请选择分享至"
+            android:textColor="#818c91"
+            android:textSize="14sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#66cfcfcf"/>
+
+        <GridLayout
+            android:id="@+id/grid_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="4"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:rowCount="2">
+
+            <com.wtuadn.pressable.PressableTextView
+                android:id="@+id/weixin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:drawablePadding="15dp"
+                android:drawableTop="@drawable/weixin_icon"
+                android:gravity="center_horizontal"
+                android:onClick="onClick"
+                android:padding="5dp"
+                android:text="微信好友"
+                android:textColor="#818c91"
+                android:textSize="14sp"
+                press:pressed_color="@color/black_pressed_color"/>
+
+            <com.wtuadn.pressable.PressableTextView
+                android:id="@+id/weixin_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:drawablePadding="15dp"
+                android:drawableTop="@drawable/weixin_circle_icon"
+                android:gravity="center_horizontal"
+                android:onClick="onClick"
+                android:padding="5dp"
+                android:text="微信朋友圈"
+                android:textColor="#818c91"
+                android:textSize="14sp"
+                press:pressed_color="@color/black_pressed_color"/>
+
+            <com.wtuadn.pressable.PressableTextView
+                android:id="@+id/qq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:drawablePadding="15dp"
+                android:drawableTop="@drawable/qq_icon"
+                android:gravity="center_horizontal"
+                android:onClick="onClick"
+                android:padding="5dp"
+                android:text="QQ好友"
+                android:textColor="#818c91"
+                android:textSize="14sp"
+                press:pressed_color="@color/black_pressed_color"/>
+
+            <com.wtuadn.pressable.PressableTextView
+                android:id="@+id/qq_zone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:drawablePadding="15dp"
+                android:drawableTop="@drawable/qq_zone_icon"
+                android:gravity="center_horizontal"
+                android:onClick="onClick"
+                android:padding="5dp"
+                android:text="QQ空间"
+                android:textColor="#818c91"
+                android:textSize="14sp"
+                press:pressed_color="@color/black_pressed_color"/>
+
+            <com.wtuadn.pressable.PressableTextView
+                android:id="@+id/weibo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:drawablePadding="15dp"
+                android:drawableTop="@drawable/weibo_icon"
+                android:gravity="center_horizontal"
+                android:onClick="onClick"
+                android:padding="5dp"
+                android:text="微博"
+                android:textColor="#818c91"
+                android:textSize="14sp"
+                press:pressed_color="@color/black_pressed_color"/>
+
+            <com.wtuadn.pressable.PressableTextView
+                android:id="@+id/copy_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:drawablePadding="15dp"
+                android:drawableTop="@drawable/copy_link_icon"
+                android:gravity="center_horizontal"
+                android:onClick="onClick"
+                android:padding="5dp"
+                android:text="复制链接"
+                android:textColor="#818c91"
+                android:textSize="14sp"
+                press:pressed_color="@color/black_pressed_color"/>
+
+            <com.wtuadn.pressable.PressableTextView
+                android:id="@+id/more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:drawablePadding="15dp"
+                android:drawableTop="@drawable/share_more_icon"
+                android:gravity="center_horizontal"
+                android:onClick="onClick"
+                android:padding="5dp"
+                android:text="更多"
+                android:textColor="#818c91"
+                android:textSize="14sp"
+                press:pressed_color="@color/black_pressed_color"/>
+        </GridLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#66cfcfcf"/>
+
+        <com.wtuadn.pressable.PressableTextView
+            android:id="@+id/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/a_main_text_color"
+            android:textSize="14sp"
+            press:pressed_color="@color/black_pressed_color"/>
+
+    </LinearLayout>
+</LinearLayout>

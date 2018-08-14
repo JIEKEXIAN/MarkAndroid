@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:btn="http://schemas.android.com/apk/res-auto"
+    xmlns:press="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ebebeb"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.8dp"
+        android:text="消息设置"
+        android:textColor="#818c91"
+        android:textSize="12sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@drawable/border_one_item">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="22dp"
+            android:drawableLeft="@drawable/notify_switch_icon"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:text="接受消息提醒"
+            android:textColor="@color/dark_blue"
+            android:textSize="15sp"/>
+
+        <com.intlime.mark.view.widget.SwitchButton
+            android:id="@+id/notify_switch"
+            android:layout_width="51dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            btn:btn_bgColor_selected="@color/green"
+            btn:btn_bgColor_unSelected="#ebebeb"
+            btn:btn_height="31dp"
+            btn:btn_radius="15.5dp"
+            btn:btn_slider_selected="@color/white"
+            btn:btn_slider_unSelected="@color/white"
+            btn:btn_stroke="1.5dp"
+            btn:btn_width="51dp"/>
+    </RelativeLayout>
+
+    <com.wtuadn.pressable.PressableTextView
+        android:id="@+id/clear_cache"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/border_one_item"
+        android:drawableLeft="@drawable/clear_cache_icon"
+        android:drawablePadding="20dp"
+        android:drawableRight="@drawable/right_arrow"
+        android:gravity="center_vertical"
+        android:paddingLeft="22dp"
+        android:paddingRight="13dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:text="清除缓存"
+        android:textColor="@color/dark_blue"
+        android:textSize="15sp"
+        press:pressed_color="@color/black_pressed_color"/>
+</LinearLayout>

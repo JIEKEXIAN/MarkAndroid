@@ -1,0 +1,19 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion compileSdkExt
+    buildToolsVersion buildToolsExt
+
+    compileOptions {
+        sourceCompatibility jdkVersion
+        targetCompatibility jdkVersion
+    }
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion targetSdkExt
+    }
+}
+
+dependencies {
+    compile "com.android.support:support-v4:$supportLibVersion"
+}

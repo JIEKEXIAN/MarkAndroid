@@ -1,0 +1,183 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'bugly'
+apply plugin: 'com.mob.sdk'
+bugly {
+    if (isRelease) {
+        appId = '900015583'
+        appKey = 'pBhlbjRnpdYmRN2n'
+    } else {
+        appId = '900029068'
+        appKey = 'SznRXHiWt1jStcxN'
+    }
+}
+
+android {
+    compileSdkVersion compileSdkExt
+    buildToolsVersion buildToolsExt
+
+    useLibrary 'org.apache.http.legacy'
+
+    signingConfigs { // 签名，你可以配置多个签名，然后再在buildTypes 进行指定。
+        release {
+            storeFile file('intlime.jks') // 签名文件存放路径
+            storePassword "wtuadn"
+            keyAlias "intlime!"
+            keyPassword "intlime"
+        }
+        debug {
+            storeFile file('intlime.jks') // 签名文件存放路径
+            storePassword "wtuadn"
+            keyAlias "intlime!"
+            keyPassword "intlime"
+        }
+    }
+
+    packagingOptions { // 打包配置
+        exclude 'META-INF/LICENSE' // 排除一些文件
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    lintOptions { // 打包时，也不因为出错中断。
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    defaultConfig {
+        applicationId "com.intlime.mark"
+        minSdkVersion 16
+        targetSdkVersion targetSdkExt
+        versionCode vcode
+        versionName vname
+
+//        multiDexEnabled true
+
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi', 'armeabi-v7a'//, 'arm64-v8a', 'x86', 'x86_64'
+        }
+        if (isRelease) {
+            manifestPlaceholders = [
+                    GETUI_APP_ID    : "sp9SYU85sx6sLhYHEvaKG1",
+                    GETUI_APP_KEY   : "WSCH57g12I6ooezeUpQ809",
+                    GETUI_APP_SECRET: "j9mCjjKURw9pjBNuGhK2F9",
+                    PACKAGE_NAME    : applicationId,
+            ]
+        } else {
+            manifestPlaceholders = [
+                    GETUI_APP_ID    : "7SiExa2oqK76equrHiXof3",
+                    GETUI_APP_KEY   : "zn5ifQiJxb6y0HwrMV3xb4",
+                    GETUI_APP_SECRET: "Ua6PckW06371PwHGvDnRb9",
+                    PACKAGE_NAME    : applicationId,
+            ]
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility jdkVersion
+        targetCompatibility jdkVersion
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release // 指定签名配置
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.debug // 指定签名配置
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    //重命名apk
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def apkName = "mark-${variant.versionName}-v${variant.versionCode}"
+//            apkName+= "-${variant.getBuildType().getName()}"
+            apkName += isRelease ? "-release.apk" : "-test.apk"
+            output.outputFile = new File(output.outputFile.parent, apkName)
+        }
+    }
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile(project(':pressable'))
+    compile(project(':PhotoView'))
+    compile(project(':glide'))
+//    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+
+    compile "com.android.support:appcompat-v7:$supportLibVersion"
+    compile "com.android.support:recyclerview-v7:$supportLibVersion"
+    compile "com.android.support:support-v4:$supportLibVersion"
+    compile "com.android.support:design:$supportLibVersion"
+    compile "com.tencent.bugly:crashreport:latest.release"
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    compile 'com.qiniu:qiniu-android-sdk:7.1.2'
+    compile 'com.zhuge.analysis:visual:latest.integration'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile 'com.rockerhieu.emojicon:library:latest.release'
+    compile 'com.getui:sdk:+'
+
+    compile 'com.mcxiaoke.gradle:packer-helper:1.0.4'
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    compile "org.jetbrains.anko:anko-sdk15:$anko_version"
+    compile "org.jetbrains.anko:anko-support-v4:$anko_version"
+    compile "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+}
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:latest.release'
+    }
+}
+repositories {
+    mavenCentral()
+    jcenter()
+}
+apply plugin: 'com.getkeepsafe.dexcount'
+
+//命令 ./gradlew -Pmarket=markets.txt clean apkRelease
+apply plugin: 'packer'
+packer {
+    // 指定渠道打包输出目录
+//    archiveOutput = file(new File('/home/wtuadn/ramdisk/apks'))
+    archiveOutput = file(new File('Z:\\apks'))
+    // 指定渠道打包输出文件名格式
+    // 默认是 `${appPkg}-${flavorName}-${buildType}-v${versionName}-${versionCode}`
+    archiveNameFormat = 'mark-v${versionName}-${versionCode}-${flavorName}-${buildType}'
+}
+MobSDK {
+    appKey "275b7aa4e8db0"
+    appSecret "f9b99188a2d894e65dd503868c5a7003"
+
+    ShareSDK {
+        //平台配置信息
+        devInfo {
+            QQ {
+                appId "1105041716"
+                appKey "XzPJLuwfoUgUhP8W"
+            }
+        }
+    }
+
+}

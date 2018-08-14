@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:paddingBottom="33dp">
+
+    <ImageView
+        android:id="@+id/head"
+        android:layout_width="51dp"
+        android:layout_height="51dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/writer_header_bg"
+        android:clickable="true"
+        android:cropToPadding="true"
+        android:onClick="onClick"
+        android:padding="2dp"
+        android:scaleType="fitCenter"/>
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/head"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11.6dp"
+        android:ellipsize="end"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="17sp"/>
+
+    <TextView
+        android:id="@+id/saying"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nickname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp"
+        android:ellipsize="end"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp"
+        android:singleLine="true"
+        android:textColor="#aab4b8"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/count_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/saying"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27.2dp"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"/>
+</RelativeLayout>

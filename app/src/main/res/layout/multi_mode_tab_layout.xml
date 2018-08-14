@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:press="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/multi_mode_tab"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/title_bar_height"
+              android:background="@drawable/main_tab_bg"
+              android:clickable="true"
+              android:gravity="center"
+              android:orientation="horizontal">
+
+    <com.wtuadn.pressable.PressableTextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="bottom|center_horizontal"
+        android:paddingBottom="4dp"
+        android:paddingTop="7dp"
+        android:textColor="@color/a_main_text_color"
+        android:textSize="11sp"
+        press:borderless="true"
+        press:pressed_color="@color/black_pressed_color"/>
+
+    <com.wtuadn.pressable.PressableTextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="bottom|center_horizontal"
+        android:paddingBottom="4dp"
+        android:paddingTop="8dp"
+        android:textColor="@color/a_main_text_color"
+        android:textSize="11sp"
+        press:borderless="true"
+        press:pressed_color="@color/black_pressed_color"/>
+
+    <com.wtuadn.pressable.PressableTextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="bottom|center_horizontal"
+        android:paddingBottom="4dp"
+        android:paddingTop="7dp"
+        android:textColor="@color/a_main_text_color"
+        android:textSize="11sp"
+        press:borderless="true"
+        press:pressed_color="@color/black_pressed_color"/>
+
+    <com.wtuadn.pressable.PressableTextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="bottom|center_horizontal"
+        android:paddingBottom="4dp"
+        android:paddingTop="7dp"
+        android:textColor="@color/a_main_text_color"
+        android:textSize="11sp"
+        press:borderless="true"
+        press:pressed_color="@color/black_pressed_color"/>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main_text_color">#304851</color>
+    <color name="a_main_text_color">#10181e</color>
+    <color name="gray_text_color">#959595</color>
+    <color name="a_gray_text_color">#a4a4a4</color>
+    <color name="pressed_color">#888888</color>
+    <color name="white_pressed_color">#f9f9f9</color>
+    <color name="black_pressed_color">#000000</color>
+    <color name="line_color">#eeeeee</color>
+    <color name="white">#ffffff</color>
+    <color name="edit_hint_color">#818c91</color>
+    <color name="black">#000000</color>
+    <color name="red">#d66d5c</color>
+    <color name="blue">#89c4f4</color>
+    <color name="yellow">#fed520</color>
+    <color name="green">#40bf57</color>
+    <color name="bg">#f4f4f4</color>
+    <color name="default_img_bg_color">#cfcfcf</color>
+    <color name="dark_blue">#496069</color>
+    <color name="comfirm_text_color">#586b95</color>
+    <color name="setting_line_color">#d2d2d2</color>
+    <color name="link_color">#6f93a2</color>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:color/transparent" android:state_checked="false"/>
+    <item android:state_checked="true">
+        <layer-list>
+            <item>
+                <shape>
+                    <solid android:color="@color/dark_blue"/>
+                    <corners android:bottomRightRadius="2dp"
+                             android:topRightRadius="2dp"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

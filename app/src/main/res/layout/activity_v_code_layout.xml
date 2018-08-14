@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:press="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <TextView
+        android:id="@+id/account"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_vertical"
+        android:text="验证码已发送至"
+        android:textColor="@color/a_main_text_color"
+        android:textSize="13sp"/>
+
+    <LinearLayout
+        android:id="@+id/code_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/account"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_edit_stroke_white"
+        android:orientation="horizontal">
+
+        <com.intlime.mark.view.widget.ClearEditText
+            android:id="@+id/v_code"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/sms_edit_icon"
+            android:drawablePadding="8.5dp"
+            android:gravity="center_vertical"
+            android:hint="验证码"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="@color/main_text_color"
+            android:textColorHint="@color/edit_hint_color"
+            android:textCursorDrawable="@drawable/edittext_cursor"
+            android:textSize="14sp"/>
+
+        <com.wtuadn.pressable.PressableTextView
+            android:id="@+id/get_code"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@drawable/button_sms_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="获取验证码"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            press:pressed_color="@color/black_pressed_color"/>
+    </LinearLayout>
+
+    <com.wtuadn.pressable.PressableTextView
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_button_stroke_white"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:text="完成"
+        android:textColor="@color/a_main_text_color"
+        android:textSize="14sp"
+        press:pressed_color="@color/black_pressed_color"/>
+</LinearLayout>
